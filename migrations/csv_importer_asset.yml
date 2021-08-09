@@ -1,0 +1,11 @@
+id: csv_importer_asset
+label: CSV Importer (Assets)
+migration_tags:
+  - CSV Importer
+  - asset
+source:
+  plugin: csv
+  path: 'public://'
+  ids:
+    - id
+deriver: \Drupal\csv_importer\Plugin\migrate\AssetDeriver

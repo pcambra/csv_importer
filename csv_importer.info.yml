@@ -1,0 +1,11 @@
+name: CSV importer
+description: FarmOS CSV importer
+type: module
+package: farm
+core_version_requirement: ^9
+dependencies:
+  - drupal:migrate
+  - migrate_source_csv:migrate_source_csv
+  - migrate_plus:migrate_plus
+  - farm:asset
+  - farm:farm_log

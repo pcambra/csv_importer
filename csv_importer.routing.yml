@@ -1,0 +1,8 @@
+csv_importer.form:
+  path: '/import/{entity_type_id}/{bundle}'
+  defaults:
+    _title: 'CSV Importer'
+    _form: '\Drupal\csv_importer\Form\ImportForm'
+  requirements:
+    #TODO: Specific permimssion.
+    _permission: 'administer farm settings'

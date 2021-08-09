@@ -1,0 +1,11 @@
+id: csv_importer_log
+label: CSV Importer (Logs)
+migration_tags:
+  - CSV Importer
+  - log
+source:
+  plugin: csv
+  path: 'public://'
+  ids:
+    - id
+deriver: \Drupal\csv_importer\Plugin\migrate\LogDeriver
