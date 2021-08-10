@@ -173,9 +173,15 @@ class ImportForm extends FormBase {
     $migration = $this->pluginManagerMigration->createInstance($migration_id);
 
     // Reset status.
-    $status = $migration->getStatus();
-    if ($status !== MigrationInterface::STATUS_IDLE) {
+    if ($migration->getStatus() !== MigrationInterface::STATUS_IDLE) {
       $migration->setStatus(MigrationInterface::STATUS_IDLE);
+      $this->messenger()->addWarning($this->t('Migration @id reset to Idle', ['@id' => $migration_id]));
+    }
+    // Force the reset of the "seed" migration plugin to ensure a clean slate.
+    $definition = $this->pluginManagerMigration->getDefinition($migration_id);
+    $base_migration = $this->pluginManagerMigration->createStubMigration($definition);
+    if ($base_migration->getStatus() !== MigrationInterface::STATUS_IDLE) {
+      $base_migration->setStatus(MigrationInterface::STATUS_IDLE);
       $this->messenger()->addWarning($this->t('Migration @id reset to Idle', ['@id' => $migration_id]));
     }
 
