@@ -104,6 +104,7 @@ abstract class CsvImporterDeriverBase extends DeriverBase implements ContainerDe
     $base_plugin_definition['destination'] = [
       'plugin' => "entity:$this->entityTypeId",
       'translation' => FALSE,
+      'validate' => TRUE,
     ];
 
     $fields = $this->getFields($bundle_name);
