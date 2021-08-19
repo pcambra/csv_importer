@@ -1,0 +1,7 @@
+type: module
+name: CSV Importer asset Test
+description: 'Provides test fixtures for testing csv import of assets.'
+package: Testing
+dependencies:
+  - drupal:migrate
+  - csv_importer:csv_importer

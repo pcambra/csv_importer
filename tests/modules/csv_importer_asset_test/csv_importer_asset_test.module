@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Contains csv_importer_asset_test.module.
+ */
+
+/**
+ * Implements hook_migration_plugins_alter().
+ */
+function csv_importer_asset_test_migration_plugins_alter(&$definitions) {
+  $definitions['csv_importer_asset:asset:cat']['source']['path'] = drupal_get_path('module', 'csv_importer_asset_test') . '/artifacts/cats.csv';
+}
